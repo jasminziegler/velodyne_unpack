@@ -1,0 +1,13 @@
+<launch>
+
+	<arg name="rvizconfig"
+		default="$(find velodyne_unpack)/config/urdf.rviz" />
+
+
+	<node name="rviz" pkg="rviz" type="rviz"
+		args="-d $(arg rvizconfig)" required="true" />
+
+	<node name="velodyne_unpack_node" pkg="velodyne_unpack"
+		type="velodyne_unpack_node" output="screen"/>
+
+</launch>
